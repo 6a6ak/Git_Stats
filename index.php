@@ -199,7 +199,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border-radius: 18px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             padding: 2rem 2.5rem;
-            max-width: 600px;
+            max-width: 700px; /* match .card */
             margin: 2rem auto 2.5rem auto;
         }
         .profile-pic-square {

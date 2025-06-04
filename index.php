@@ -66,12 +66,12 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .stats-row {
             display: flex;
-            flex-direction: column; /* vertical layout */
-            gap: 1.2rem;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
             margin: 0;
+            gap: 0;
         }
         .card {
             width: 100%;
@@ -97,7 +97,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             object-fit: contain;
         }
         .stats-trophy {
-            margin: 0 auto 1.5rem auto; /* bottom margin for spacing */
+            margin: 0 auto 1.5rem auto;
             width: 100%;
             max-width: 700px;
             overflow-x: auto;

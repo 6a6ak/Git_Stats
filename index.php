@@ -69,11 +69,6 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             height: 20px;
             fill: #fff;
         }
-        .stats-heading {
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
         .stats-container {
             width: 100%;
             max-width: 900px;
@@ -105,11 +100,6 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         .card img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-        }
-        .stats-wide img,
-        .stats-single img {
-            width: 100%;
             object-fit: contain;
         }
         .trophy-card {
@@ -191,9 +181,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 padding-right: 0;
             }
             .card,
-            .stats-wide,
-            .stats-single,
-            .stats-trophy {
+            .trophy-card {
                 max-width: 100vw;
                 width: 100%;
                 padding: 0.5rem;

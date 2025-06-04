@@ -263,6 +263,12 @@ if ($username) {
             </button>
         </form>
     <?php elseif (!$user_found): ?>
+        <form method="get" class="search-bar" style="margin-bottom:20px;">
+            <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
+            <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </form>
         <div class="card" style="max-width:400px;">
             <img src="https://github-readme-streak-stats.herokuapp.com/demo/notfound.svg" alt="Could not find a user with that name." style="width:100%;max-width:350px;display:block;margin:0 auto;">
         </div>

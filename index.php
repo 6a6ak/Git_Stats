@@ -77,7 +77,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             width: 100%;
             max-width: 700px;
             min-width: 0;
-            margin: 0 auto;
+            margin: 5 auto;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;

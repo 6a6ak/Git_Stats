@@ -196,7 +196,11 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         <div class="card trophy-card">
             <div style="font-weight:bold; font-size:1.1rem; margin-bottom:0.7rem;">GitHub Trophies</div>
             <div class="trophy-scroll">
-                <img src="https://github-profile-trophy.vercel.app/?username=<?= $username ?>&margin-w=10&margin-h=10&row=1&no-bg=true&theme=onestar" alt="GitHub Trophies" style="min-width:350px; max-width:100%; display:inline-block;">
+                <img 
+                    src="https://github-profile-trophy.vercel.app/?username=<?= $username ?>&margin-w=10&margin-h=10&column=4&no-bg=true&theme=onestar"
+                    alt="GitHub Trophies"
+                    style="width:100%;max-width:100%;height:auto;display:block;margin:0 auto;"
+                >
             </div>
         </div>
     </div>

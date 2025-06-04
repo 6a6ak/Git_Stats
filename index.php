@@ -189,5 +189,16 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
     </div>
 <?php endif; ?>
 
+<!-- Add this script before </body> -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var wakaImg = document.querySelector('img[alt="WakaTime Stats"]');
+    if (wakaImg) {
+        wakaImg.onerror = function() {
+            wakaImg.parentElement.style.display = 'none';
+        };
+    }
+});
+</script>
 </body>
 </html>

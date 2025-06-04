@@ -60,8 +60,9 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .stats-container {
             width: 100%;
-            max-width: 900px;
+            max-width: none; /* حذف محدودیت عرض */
             margin: 0 auto;
+            padding: 0; /* حذف فاصله اضافی */
         }
         .stats-row {
             display: flex;
@@ -69,22 +70,20 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             gap: 1.5rem;
             align-items: stretch;
             justify-content: center;
-            margin-left: 0;
-            margin-right: 0;
-            padding-left: 0;
-            padding-right: 0;
+            width: 100%;
+            margin: 0; /* حذف فاصله اضافی */
         }
-        .card {
-            background: #fff;
+        .card,
+        .stats-wide,
+        .stats-single {
+            width: 100%;
+            max-width: none; /* حذف محدودیت عرض */
+            margin: 0 0 1.5rem 0; /* فقط فاصله پایین */
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;
-            margin: 0;
-            max-width: 100%;
-            width: 100%;
-            min-height: 180px; /* Ensures equal height */
+            background: #fff;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
@@ -93,27 +92,15 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             height: 100%;
             object-fit: contain;
         }
-        .stats-wide,
-        .stats-single {
-            width: 100%;
-            max-width: 700px;
-            margin: 1.5rem auto 0 auto; /* فاصله بالا، حذف فاصله کناری */
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-            padding: 1.2rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         .stats-wide img,
         .stats-single img {
             width: 100%;
             object-fit: contain;
         }
         .stats-trophy {
-            margin: 1.5rem auto;
-            max-width: 100vw;
+            margin: 0 auto;
+            width: 100%;
+            max-width: none;
             overflow-x: auto;
             white-space: nowrap;
             background: #fff;

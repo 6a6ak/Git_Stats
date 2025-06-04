@@ -60,25 +60,25 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .stats-container {
             width: 100%;
-            max-width: none; /* حذف محدودیت عرض */
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0; /* حذف فاصله اضافی */
+            padding: 0;
         }
         .stats-row {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.2rem;
             align-items: stretch;
             justify-content: center;
             width: 100%;
-            margin: 0; /* حذف فاصله اضافی */
+            margin: 0;
         }
         .card,
         .stats-wide,
         .stats-single {
             width: 100%;
-            max-width: none; /* حذف محدودیت عرض */
-            margin: 0 0 1.5rem 0; /* فقط فاصله پایین */
+            max-width: 700px;
+            margin: 0 auto 1.2rem auto;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;
@@ -100,7 +100,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         .stats-trophy {
             margin: 0 auto;
             width: 100%;
-            max-width: none;
+            max-width: 700px;
             overflow-x: auto;
             white-space: nowrap;
             background: #fff;
@@ -138,9 +138,10 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 min-width: 0;
                 flex: 1 1 0;
             }
-            .stats-wide {
-                margin-left: 0;
-                margin-right: 0;
+            .stats-wide,
+            .stats-single,
+            .stats-trophy {
+                max-width: 700px;
             }
         }
         @media (max-width: 600px) {
@@ -152,14 +153,12 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             }
             .card,
             .stats-wide,
-            .stats-single {
+            .stats-single,
+            .stats-trophy {
                 max-width: 100vw;
                 width: 100%;
                 padding: 0.5rem;
                 margin: 0;
-            }
-            .stats-trophy {
-                padding: 0.5rem;
             }
         }
     </style>

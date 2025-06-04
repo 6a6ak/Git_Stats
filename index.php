@@ -173,9 +173,9 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             <div class="card">
                 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=<?= $username ?>&layout=compact&theme=default&langs_count=10" alt="Top Languages">
             </div>
-            <div class="card">
+          <!--  <div class="card">
                 <img src="https://github-readme-stats.vercel.app/api/wakatime?username=<?= $username ?>&theme=default" alt="WakaTime Stats">
-            </div>
+            </div>-->
         </div>
         <div class="stats-wide">
             <img src="https://ghchart.rshah.org/<?= $username ?>" alt="GitHub Contribution Chart">

@@ -22,7 +22,7 @@ A simple PHP web app to view GitHub user statistics and achievements in a clean,
 
 ## Example
 
-![Screenshot](https://github-readme-stats.vercel.app/api?username=octocat&show_icons=true&theme=default)
+![App Screenshot](screenshot.jpg)
 
 ## Credits
 

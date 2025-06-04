@@ -11,9 +11,20 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
     <style>
         body {
             font-family: sans-serif;
-            text-align: center;
-            padding: 2rem;
             background-color: #f0f0f0;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-center {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .search-bar {
             display: flex;

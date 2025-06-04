@@ -119,7 +119,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         .streak-section,
         .trophy-section {
             margin-bottom: 16px; /* or a value that fits your design */
-            padding-bottom: 110;
+            padding-bottom: 0;
         }
 
         /* Optionally, remove extra margin from the last section */

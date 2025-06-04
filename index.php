@@ -22,16 +22,20 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             margin: 0;
             max-width: 400px;
             width: 100%;
-            background: #e5e7eb; /* light gray background */
+            background: #e5e7eb;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border: 1.5px solid #cbd5e1;
-            padding: 8px 10px;
+            padding: 0;
+            overflow: hidden;
         }
         .search-bar input[type="text"] {
             background: transparent;
             border: none;
             outline: none;
+            padding: 12px 14px;
+            font-size: 1rem;
+            flex: 1 1 0;
         }
         .search-bar button {
             padding: 0 18px;
@@ -39,7 +43,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             background: #2563eb;
             color: #fff;
             border: none;
-            border-radius: 0 6px 6px 0;
+            border-radius: 0 8px 8px 0;
             cursor: pointer;
             transition: background 0.2s;
             display: flex;

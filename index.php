@@ -96,18 +96,25 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             width: 100%;
             object-fit: contain;
         }
-        .stats-trophy {
-            margin: 0 auto 1.5rem auto;
-            width: 100%;
-            max-width: 700px;
-            overflow-x: auto;
-            white-space: nowrap;
+        .trophy-card {
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;
+            margin: 0 auto 1.5rem auto;
+            max-width: 700px;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .stats-trophy img {
+        .trophy-scroll {
+            width: 100%;
+            overflow-x: auto;
+            text-align: center;
+            padding-bottom: 0.5rem;
+        }
+        .trophy-card img {
             min-width: 350px;
             max-width: 100%;
             display: inline-block;
@@ -186,8 +193,11 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         <div class="card">
             <img src="https://github-readme-streak-stats.herokuapp.com/?user=<?= $username ?>&theme=default" alt="GitHub Streak Stats">
         </div>
-        <div class="stats-trophy">
-            <img src="https://github-profile-trophy.vercel.app/?username=<?= $username ?>&margin-w=10&margin-h=10&row=1&no-bg=true&theme=onestar" alt="GitHub Trophies">
+        <div class="card trophy-card">
+            <div style="font-weight:bold; font-size:1.1rem; margin-bottom:0.7rem;">GitHub Trophies</div>
+            <div class="trophy-scroll">
+                <img src="https://github-profile-trophy.vercel.app/?username=<?= $username ?>&margin-w=10&margin-h=10&row=1&no-bg=true&theme=onestar" alt="GitHub Trophies" style="min-width:350px; max-width:100%; display:inline-block;">
+            </div>
         </div>
     </div>
 <?php endif; ?>

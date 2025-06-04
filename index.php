@@ -253,7 +253,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 
 
 <?php if ($username): ?>
-<div class="card profile-header-box">
+<div class="card">
     <div class="profile-pic-square">
         <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
     </div>

@@ -31,7 +31,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             justify-content: center;
             align-items: center;
             margin: 0;
-            max-width: 400px;
+            max-width: 250px;
             width: 100%;
             background: #e5e7eb;
             border-radius: 8px;

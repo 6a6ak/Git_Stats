@@ -19,17 +19,18 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 1.5rem auto 0 auto;
+            margin: 0;
             max-width: 400px;
             width: 100%;
+            background: #e5e7eb; /* light gray background */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1.5px solid #cbd5e1;
+            padding: 8px 10px;
         }
         .search-bar input[type="text"] {
-            padding: 10px 14px;
-            font-size: 1rem;
+            background: transparent;
             border: none;
-            border-radius: 6px 0 0 6px;
-            width: 100%;
-            box-sizing: border-box;
             outline: none;
         }
         .search-bar button {
@@ -198,22 +199,22 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             margin: 2rem auto 2.5rem auto;
         }
         .profile-pic-square {
-            width: 120px;
-            height: 120px;
-            background: #fff;
+            width: 170px;
+            height: 170px;
+            background: transparent;
             border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            box-shadow: none;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .profile-pic-square img {
-            width: 100px;
-            height: 100px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #e5e7eb;
-            background: #fff;
+            border: none;
+            background: transparent;
         }
         @media (max-width: 700px) {
             .profile-header-box {
@@ -222,12 +223,12 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 padding: 1rem;
             }
             .profile-pic-square {
-                width: 90px;
-                height: 90px;
+                width: 110px;
+                height: 110px;
             }
             .profile-pic-square img {
-                width: 70px;
-                height: 70px;
+                width: 100px;
+                height: 100px;
             }
         }
     </style>

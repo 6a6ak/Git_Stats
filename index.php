@@ -66,19 +66,19 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .stats-row {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 1.2rem;
             align-items: stretch;
             justify-content: center;
             width: 100%;
             margin: 0;
         }
-        .card,
-        .stats-wide,
-        .stats-single {
+        .card {
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 1.2rem auto;
+            max-width: 350px;
+            min-width: 0;
+            flex: 1 1 0;
+            margin: 0;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;
@@ -185,10 +185,13 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
     <div class="stats-container">
         <div class="stats-row">
             <div class="card">
-                <img src="https://github-readme-stats.vercel.app/api?username=<?= $username ?>&show_icons=true&theme=default" alt="GitHub Stats">
+                <img src="https://github-readme-stats.vercel.app/api?username=<?= $username ?>&show_icons=true&theme=default&count_private=true&include_all_commits=true&hide=prs,issues" alt="GitHub Stats">
             </div>
             <div class="card">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=<?= $username ?>&layout=compact&theme=default" alt="Top Languages">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=<?= $username ?>&layout=compact&theme=default&langs_count=10" alt="Top Languages">
+            </div>
+            <div class="card">
+                <img src="https://github-readme-stats.vercel.app/api/wakatime?username=<?= $username ?>&theme=default" alt="WakaTime Stats">
             </div>
         </div>
         <div class="stats-wide">

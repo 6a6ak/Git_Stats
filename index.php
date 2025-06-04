@@ -126,6 +126,21 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             max-width: 100%;
             display: inline-block;
         }
+        /* Reduce vertical spacing between dashboard sections */
+        .dashboard-section,
+        .stats-section,
+        .contribution-chart,
+        .streak-section,
+        .trophy-section {
+            margin-bottom: 16px; /* or a value that fits your design */
+            padding-bottom: 0;
+        }
+
+        /* Optionally, remove extra margin from the last section */
+        .trophy-section {
+            margin-bottom: 0;
+        }
+
         @media (min-width: 900px) {
             .stats-row {
                 flex-direction: row;

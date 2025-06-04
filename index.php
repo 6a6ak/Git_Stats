@@ -127,22 +127,6 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             margin-bottom: 0;
         }
 
-        @media (min-width: 900px) {
-            .stats-row {
-                flex-direction: row;
-                gap: 1.5rem;
-            }
-            .card {
-                max-width: 400px;
-                min-width: 0;
-                flex: 1 1 0;
-            }
-            .stats-wide,
-            .stats-single,
-            .stats-trophy {
-                max-width: 700px;
-            }
-        }
         @media (max-width: 600px) {
             .stats-row {
                 flex-direction: column;

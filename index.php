@@ -65,21 +65,22 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border-radius: 8px 0 0 8px;
         }
         .search-bar button {
-            padding: 0 20px;
-            height: 40px;
-            background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
-            color: #fff;
-            border: none;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s;
+            width: auto; /* یا اگر می‌خواهی کل ارتفاع را بگیرد height: 40px; */
+            min-width: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 20px;
+            gap: 4px;
+            cursor: pointer;
+            border: none;
+            background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
+            color: #fff;
+            border-radius: 0 8px 8px 0;
             font-weight: 600;
             font-size: 1rem;
-            gap: 4px;
             box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            transition: background 0.2s, box-shadow 0.2s;
         }
         .search-bar button:hover {
             background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
@@ -280,7 +281,7 @@ if ($username) {
             <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/>
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        <span>Search</span>
+        <span>جستجو</span>
     </button>
 </form>
     <?php elseif (!$user_found): ?>

@@ -65,22 +65,21 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border-radius: 8px 0 0 8px;
         }
         .search-bar button {
-            width: auto; /* یا اگر می‌خواهی کل ارتفاع را بگیرد height: 40px; */
-            min-width: 70px;
+            height: 40px;
+            padding: 0 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
+            border: none;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-            gap: 4px;
             cursor: pointer;
-            border: none;
-            background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
-            color: #fff;
-            border-radius: 0 8px 8px 0;
-            font-weight: 600;
-            font-size: 1rem;
             box-shadow: 0 2px 8px rgba(37,99,235,0.08);
             transition: background 0.2s, box-shadow 0.2s;
+            gap: 6px;
         }
         .search-bar button:hover {
             background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
@@ -277,7 +276,7 @@ if ($username) {
 <form method="get" class="search-bar">
     <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
     <button type="submit" aria-label="Search">
-        <svg viewBox="0 0 24 24" width="18" height="18" style="margin-left:6px;">
+        <svg viewBox="0 0 24 24" width="18" height="18" style="margin-right:6px;">
             <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/>
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>

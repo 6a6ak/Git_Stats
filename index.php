@@ -238,30 +238,52 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 </head>
 <body>
 
+<?php
+// Check if user exists (simple check using GitHub API)
+$user_found = false;
+if ($username) {
+    $github_api = @file_get_contents("https://api.github.com/users/$username", false, stream_context_create([
+        'http' => [
+            'user_agent' => 'GitHub Stats Viewer'
+        ]
+    ]));
+    if ($github_api && strpos($github_api, '"login"') !== false) {
+        $user_found = true;
+    }
+}
+?>
 
-
-<?php if ($username): ?>
-<div class="card">
-    <div class="profile-pic-square">
-        <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
-    </div>
-    <form method="get" class="search-bar">
-        <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
-        <button type="submit" aria-label="Search">
-            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-    </form>
+<div class="main-center">
+    <h1>GitHub Stats Viewer</h1>
+    <?php if (!$username || !$user_found): ?>
+        <?php if ($username && !$user_found): ?>
+            <div style="color:#dc2626;font-weight:bold;margin-bottom:10px;">Not found</div>
+        <?php endif; ?>
+        <form method="get" class="search-bar">
+            <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
+            <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </form>
+    <?php else: ?>
+        <div class="card" style="max-width:250px;text-align:center;font-weight:bold;">
+            Stats for <span style="color:#2563eb"><?= $username ?></span>
+        </div>
+    <?php endif; ?>
 </div>
-<?php else: ?>
-<form method="get" class="search-bar">
-    <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
-    <button type="submit" aria-label="Search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-</form>
-<?php endif; ?>
 
-<?php if ($username): ?>
+<?php if ($username && $user_found): ?>
+    <div class="card">
+        <div class="profile-pic-square">
+            <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
+        </div>
+        <form method="get" class="search-bar">
+            <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
+            <button type="submit" aria-label="Search">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </form>
+    </div>
     <div class="card"> <!-- stats-heading -->
         Stats for <strong><?= $username ?></strong>
     </div>

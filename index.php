@@ -272,10 +272,6 @@ if ($username) {
         <div class="card" style="max-width:400px; text-align:center;">
             <img src="https://github-readme-streak-stats.herokuapp.com/?user=" alt="Could not find a user with that name." style="width:100%;max-width:350px;display:block;margin:0 auto;">
         </div>
-    <?php else: ?>
-        <div class="card" style="max-width:250px;text-align:center;font-weight:bold;">
-            Stats for <span style="color:#2563eb"><?= $username ?></span>
-        </div>
     <?php endif; ?>
 </div>
 
@@ -290,9 +286,6 @@ if ($username) {
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
         </form>
-    </div>
-    <div class="card"> <!-- stats-heading -->
-        Stats for <strong><?= $username ?></strong>
     </div>
     <div class="stats-container">
         <div class="stats-row">

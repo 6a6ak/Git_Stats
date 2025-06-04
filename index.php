@@ -274,7 +274,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 <?php endif; ?>
 
 <?php if ($username): ?>
-    <div class="card"> /* stats-heading */
+    <div class="card"> <!-- stats-heading -->
         Stats for <strong><?= $username ?></strong>
     </div>
     <div class="stats-container">

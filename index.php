@@ -65,20 +65,24 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border-radius: 8px 0 0 8px;
         }
         .search-bar button {
-            padding: 0 18px;
+            padding: 0 20px;
             height: 40px;
-            background: #2563eb;
+            background: linear-gradient(90deg, #2563eb 60%, #1e40af 100%);
             color: #fff;
             border: none;
-            border-radius: 0;
+            border-radius: 0 8px 8px 0;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: background 0.2s, box-shadow 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
         }
         .search-bar button:hover {
-            background: #1e40af;
+            background: linear-gradient(90deg, #1e40af 60%, #2563eb 100%);
+            box-shadow: 0 4px 16px rgba(37,99,235,0.13);
         }
         .stats-container {
             width: 100%;
@@ -270,7 +274,8 @@ if ($username) {
         <form method="get" class="search-bar">
             <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
             <button type="submit" aria-label="Search">
-                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg style="margin-left:6px;" viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                Search
             </button>
         </form>
     <?php elseif (!$user_found): ?>

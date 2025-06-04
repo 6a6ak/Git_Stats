@@ -177,7 +177,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         <div class="card">
             <img src="https://ghchart.rshah.org/<?= $username ?>" alt="GitHub Contribution Chart">
         </div>
-        <div class="stats-single">
+        <div class="card">
             <img src="https://github-readme-streak-stats.herokuapp.com/?user=<?= $username ?>&theme=default" alt="GitHub Streak Stats">
         </div>
         <div class="stats-trophy">

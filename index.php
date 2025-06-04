@@ -66,19 +66,18 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .stats-row {
             display: flex;
-            flex-direction: row;
+            flex-direction: column; /* vertical layout */
             gap: 1.2rem;
-            align-items: stretch;
+            align-items: center;
             justify-content: center;
             width: 100%;
             margin: 0;
         }
         .card {
             width: 100%;
-            max-width: 350px;
+            max-width: 700px;
             min-width: 0;
-            flex: 1 1 0;
-            margin: 0;
+            margin: 0 auto;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;

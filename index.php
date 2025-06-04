@@ -184,6 +184,52 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 margin: 0;
             }
         }
+
+        .profile-header-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2rem;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem 2.5rem;
+            max-width: 600px;
+            margin: 2rem auto 2.5rem auto;
+        }
+        .profile-pic-square {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-pic-square img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            background: #fff;
+        }
+        @media (max-width: 700px) {
+            .profile-header-box {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .profile-pic-square {
+                width: 90px;
+                height: 90px;
+            }
+            .profile-pic-square img {
+                width: 70px;
+                height: 70px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,8 +237,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 <h1>GitHub Stats Viewer</h1>
 
 <?php if ($username): ?>
-<div class="profile-search-bar">
-    <div class="profile-pic-big">
+<div class="profile-header-box">
+    <div class="profile-pic-square">
         <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
     </div>
     <form method="get" class="search-bar">

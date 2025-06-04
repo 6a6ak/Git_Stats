@@ -250,7 +250,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 </head>
 <body>
 
-<h1>GitHub Stats Viewer</h1>
+
 
 <?php if ($username): ?>
 <div class="profile-header-box">

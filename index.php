@@ -28,7 +28,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar {
             display: flex;
-            justify-content: center;
+            flex-direction: row-reverse;
             align-items: center;
             margin: 0;
             max-width: 250px;
@@ -40,6 +40,21 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             padding: 0;
             overflow: hidden;
         }
+        .search-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2563eb;
+            border-radius: 0 8px 8px 0;
+            width: 40px;
+            height: 40px;
+            margin-left: 2px;
+        }
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
         .search-bar input[type="text"] {
             background: transparent;
             border: none;
@@ -47,6 +62,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             padding: 12px 14px;
             font-size: 1rem;
             flex: 1 1 0;
+            border-radius: 8px 0 0 8px;
         }
         .search-bar button {
             padding: 0 18px;
@@ -54,7 +70,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             background: #2563eb;
             color: #fff;
             border: none;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0;
             cursor: pointer;
             transition: background 0.2s;
             display: flex;
@@ -63,11 +79,6 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar button:hover {
             background: #1e40af;
-        }
-        .search-bar svg {
-            width: 20px;
-            height: 20px;
-            fill: #fff;
         }
         .stats-container {
             width: 100%;

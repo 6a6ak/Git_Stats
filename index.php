@@ -173,11 +173,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             <div class="card">
                 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=<?= $username ?>&layout=compact&theme=default&langs_count=10" alt="Top Languages">
             </div>
-          <!--  <div class="card">
-                <img src="https://github-readme-stats.vercel.app/api/wakatime?username=<?= $username ?>&theme=default" alt="WakaTime Stats">
-            </div>-->
         </div>
-        <div class="stats-wide">
+        <div class="card">
             <img src="https://ghchart.rshah.org/<?= $username ?>" alt="GitHub Contribution Chart">
         </div>
         <div class="stats-single">
@@ -189,16 +186,5 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
     </div>
 <?php endif; ?>
 
-<!-- Add this script before </body> -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var wakaImg = document.querySelector('img[alt="WakaTime Stats"]');
-    if (wakaImg) {
-        wakaImg.onerror = function() {
-            wakaImg.parentElement.style.display = 'none';
-        };
-    }
-});
-</script>
 </body>
 </html>

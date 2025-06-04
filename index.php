@@ -69,13 +69,17 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             gap: 1.5rem;
             align-items: stretch;
             justify-content: center;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
         .card {
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
             padding: 1.2rem 1rem;
-            margin: 0.5rem;
+            margin: 0;
             max-width: 100%;
             width: 100%;
             min-height: 180px; /* Ensures equal height */
@@ -93,7 +97,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         .stats-single {
             width: 100%;
             max-width: 700px;
-            margin: 1.5rem auto;
+            margin: 1.5rem auto 0 auto; /* فاصله بالا، حذف فاصله کناری */
             background: #fff;
             border-radius: 16px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
@@ -132,10 +136,17 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 min-width: 0;
                 flex: 1 1 0;
             }
+            .stats-wide {
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
         @media (max-width: 600px) {
             .stats-row {
                 flex-direction: column;
+                gap: 1rem;
+                padding-left: 0;
+                padding-right: 0;
             }
             .card,
             .stats-wide,
@@ -143,6 +154,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
                 max-width: 100vw;
                 width: 100%;
                 padding: 0.5rem;
+                margin: 0;
             }
             .stats-trophy {
                 padding: 0.5rem;

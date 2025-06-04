@@ -97,7 +97,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             object-fit: contain;
         }
         .stats-trophy {
-            margin: 0 auto;
+            margin: 0 auto 1.5rem auto; /* bottom margin for spacing */
             width: 100%;
             max-width: 700px;
             overflow-x: auto;
@@ -124,6 +124,12 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 
         /* Optionally, remove extra margin from the last section */
         .trophy-section {
+            margin-bottom: 0;
+        }
+
+        /* Remove bottom margin from the last card/trophy */
+        .stats-container > .card:last-of-type,
+        .stats-container > .stats-trophy:last-of-type {
             margin-bottom: 0;
         }
 

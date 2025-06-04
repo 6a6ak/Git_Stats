@@ -140,6 +140,33 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             margin-bottom: 0;
         }
 
+        .profile-search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .profile-pic-big img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            border: 4px solid #fff;
+            background: #fff;
+            object-fit: cover;
+        }
+        @media (max-width: 700px) {
+            .profile-search-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .profile-pic-big img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
         @media (max-width: 600px) {
             .stats-row {
                 flex-direction: column;
@@ -163,18 +190,28 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
 
 <h1>GitHub Stats Viewer</h1>
 
+<?php if ($username): ?>
+<div class="profile-search-bar">
+    <div class="profile-pic-big">
+        <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
+    </div>
+    <form method="get" class="search-bar">
+        <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
+        <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+    </form>
+</div>
+<?php else: ?>
 <form method="get" class="search-bar">
     <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
     <button type="submit" aria-label="Search">
-        <!-- Search icon SVG -->
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
 </form>
+<?php endif; ?>
 
 <?php if ($username): ?>
-    <div style="margin-top:1.5rem;">
-        <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar" style="width:96px;height:96px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:1rem;">
-    </div>
     <div class="stats-heading">
         Stats for <strong><?= $username ?></strong>
     </div>

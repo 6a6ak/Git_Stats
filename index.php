@@ -28,7 +28,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar {
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             align-items: center;
             margin: 0;
             max-width: 250px;
@@ -277,13 +277,14 @@ if ($username) {
 <form method="get" class="search-bar">
     <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
     <button type="submit" aria-label="Search">
-        <svg style="margin-right:5px;" viewBox="0 0 24 24" width="18" height="18">
+        <svg viewBox="0 0 24 24" width="18" height="18" style="margin-left:6px;">
             <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/>
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <span>جستجو</span>
     </button>
 </form>
+
 
     <?php elseif (!$user_found): ?>
         <form method="get" class="search-bar" style="margin-bottom:20px;">

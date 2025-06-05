@@ -29,8 +29,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         .search-bar {
             display: flex;
             align-items: center;
-            max-width: 400px; /* Increased width */
-            width: 100%;
+            max-width: 350px; /* Increased width */
+            width: 80%;
             background: #e5e7eb;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);

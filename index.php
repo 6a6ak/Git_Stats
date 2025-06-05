@@ -28,10 +28,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar {
             display: flex;
-            flex-direction: row;
             align-items: center;
-            margin: 0;
-            max-width: 250px;
+            max-width: 280px;
             width: 100%;
             background: #e5e7eb;
             border-radius: 8px;
@@ -66,8 +64,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar button {
             height: 40px;
-            min-width: 70px;
-            padding: 0 16px;
+            min-width: 90px;
+            padding: 0 18px;
             font-size: 1rem;
             font-weight: 600;
             color: white;
@@ -278,7 +276,7 @@ if ($username) {
 <form method="get" class="search-bar">
     <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
     <button type="submit" aria-label="Search">
-        <svg viewBox="0 0 24 24" width="18" height="18" style="margin-right:6px;">
+        <svg viewBox="0 0 24 24" width="20" height="20" style="margin-left: 6px;">
             <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/>
             <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/>
         </svg>

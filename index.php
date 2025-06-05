@@ -37,6 +37,8 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border: 1.5px solid #cbd5e1;
             padding: 0;
             overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
         }
         .search-icon {
             display: flex;

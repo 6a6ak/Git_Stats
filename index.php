@@ -66,6 +66,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
         }
         .search-bar button {
             height: 40px;
+            min-width: 70px;
             padding: 0 16px;
             font-size: 1rem;
             font-weight: 600;
@@ -76,6 +77,7 @@ $username = isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '';
             border-bottom-right-radius: 8px;
             display: flex;
             align-items: center;
+            justify-content: center;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(37,99,235,0.08);
             transition: background 0.2s, box-shadow 0.2s;

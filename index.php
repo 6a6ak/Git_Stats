@@ -301,12 +301,12 @@ if ($username) {
             <img src="https://github.com/<?= $username ?>.png" alt="GitHub Avatar">
         </div>
         <form method="get" class="search-bar">
-            <span class="search-icon">
-                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            </span>
             <input type="text" name="username" placeholder="Enter GitHub username" value="<?= $username ?>">
             <button type="submit" aria-label="Search">
-                جستجو
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2" fill="none"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </button>
         </form>
     </div>
